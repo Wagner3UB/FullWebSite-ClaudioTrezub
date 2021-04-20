@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--META TAGS-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="Dr. Claudio Trezub">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta property="og:url" content="https://www.claudiotrezub.com.br">
+
+        <meta property="og:title" content="Dr. Claudio Trezub - Médico Perito">
+        <meta property="og:site_name" content="Dr. Claudio Trezub - Médico Perito">
+
+        <meta property="og:description" content="Bem vindo a minha página pessoal, eu sou o Dr. Cláudio Trezub, Médcio Perito a mais de 30 anos!">
+
+        <meta property="og:image" content="img/open-graph.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="800"> 
+        <meta property="og:image:height" content="600"> 
+
+        <meta property="og:type" content="website">
+             
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        
+        <!-- inizio favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <title>Dr. Claudio Trezub - Médico Perito</title>
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    </head>
+
+    <body id="body-contato">
+        <header id="header">
+            <div id="header__box">
+
+                <a id="logo__link" href="https://claudiotrezub.com.br"><img id="logo__img" src="img/logo.png" alt="Logotipo Claudio Trezub"></a>
+
+                <div id="header__social">
+
+                    <a href="#"><img class="icones_social img_social img_social_right" src="img/linkedin_pequeno.png" alt="linkedin"></a>
+
+                    <a href="#"><img class="icones_social img_social" src="img/facebook_pequeno.png" alt="facebook"></a>
+
+                    <a class="icones_social a_social" href="mailto:contato@claudiotrezub.com.br">contato@claudiotrezub.com.br</a>
+          
+                </div>
+                
+                <ul id="header__menu">
+                    <li><a href="/">Contato</a></li>
+                    <li><a href="realizacoes.html">Realizações</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="https://cw3pericias.com.br" _blank >CW3 Perícias</a></li>
+                    <li><a href="index.html">Dr. Trezub</a></li>
+
+                </ul>   
+            </div>
+        </header>
+
+        <section id="header__banner--contato"><img src="img/banner-full-contato2.jpg" alt=""></section>
+
+<!--WORKING AREA-->
+
+        <section id="contato">
+
+            <div id="contato-form">
+
+                <h1>Contato</h1>
+
+                <p class="p-titulo">Entre em contato conosco preenchendo o formulário abaixo, ficarei feliz em poder trocar algumas informações com você!</p>
+                <p class="p-titulo">Caso prefira utilizar seu gerenciador de email este é o meu email: <a href="mailto>contato@claudiotrezub.com.br">contato@claudiotrezub.com.br</a></p>
+
+                <div id="form">
+                    <div id="resultato" class="resultado"></div>
+                    <div class="clear"></div>
+                    <div id="form-esquerda">
+
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" class="input input-nome" placeholder="Insira seu nome completo" required>
+                                        
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" class="input input-email" placeholder=" email@dominio.com" required>
+
+                        <label for="texto">Assunto:</label>
+                        <input type="text" id="assunto" name="assunto" class="input input-assunto" placeholder="Insira o assunto" required>
+
+                    </div>
+
+                    <textarea name="texto" id="text-area" placeholder="Insira seu comentário" required></textarea>
+
+                    <div class="clear"></div>
+
+                    <label id="label-checkbox">
+
+                        <input type="checkbox" name="privacy" id="privacy" required />
+
+                        <span id="texto-privacy">Concordo com os termos de 
+
+                            <a href="privacy.html" _blanck>privacidade</a>
+
+                        </span>
+
+                    </label>
+
+                    <button onclick="invioDados()">Enviar</button>
+
+                </div>
+            </div>
+        </section>
+
+<!--END OF WORKING AREA-->
+
+        <footer id="footer">
+
+            <a class="footer__letras footer__a" href="mailto:contato@claudiotrezub.com.br">contato@claudiotrezub.com.br</a>
+
+            <h3 class="footer__letras">Direitos reservados - Proibida toda e qualquer cópia</h3>
+
+            <h3 class="footer__letras">Design & Development - Wagner Trezub/2020</h3>
+
+            <a href=""><img src="img/logo-wagner.png" alt=""></a>
+
+        </footer>
+
+        <script>
+
+            function invioDados() {
+
+                var nome = document.getElementById('nome');
+                var email = document.getElementById('email');
+                var assunto = document.getElementById('assunto');
+                var texto = document.getElementById('text-area');
+                var privacy = document.getElementById('privacy');
+                var textoPrivacy = document.getElementById('texto-privacy');
+                var resultado = document.getElementById('resultado');
+
+                var controleDados = controleInput(nome, email, assunto, texto, privacy, textoPrivacy, resultado);
+
+                if(controleDados == true){
+
+                    resultato.style.backgroundColor = "rgba(255, 248, 220, 0.6)";
+                    resultato.style.color = "darkolivegreen";
+                    
+                    var privacy = 'aceitos';
+    
+                    var valueNome = nome.value;
+                    var valueEmail = email.value;
+                    var valueAssunto = assunto.value;
+                    var valueTexto = texto.value;
+    
+                    var dataList = 'nome='+valueNome+'&email='+valueEmail+'&assunto='+valueAssunto+'&texto='+valueTexto+'&privacy='+privacy;
+    
+                    $.ajax({
+                        url:'invio-contato.php',
+                        type: 'POST',
+                        data: dataList,
+                        success: function(resposta){
+                            resultato.innerHTML = resposta;
+                        }
+                    });
+
+                    clearForm(nome, email, assunto, texto, textoPrivacy);
+                }
+
+            }
+
+            function controleInput(nome, email, assunto, texto, privacy, textoPrivacy, resultado) {
+
+                //controla o estado do input
+                var controle = true;
+    
+                //Reset das colores
+                nome.style.backgroundColor = "#fff";
+                email.style.backgroundColor = "#ffffff";
+                assunto.style.backgroundColor = "#ffffff"
+                privacy.style.backgroundColor = "#ffffff";
+                textoPrivacy.style.color = "#868686";
+
+                resultato.innerHTML = ""; //O que colocar dentro do "" sera escrito dentro da div <div>AQUI</div>
+    
+                if(nome.value == ""){
+                    nome.style.backgroundColor = "#ffa3ad50";
+                    resultato.innerHTML = "<p>Campos não preenchidos</p>";
+                    resultato.style.backgroundColor = "#ffa3ad50";
+                    controle = false;
+                }
+    
+                if(email.value == ""){
+                    email.style.backgroundColor = "#ffa3ad50";
+                    resultato.innerHTML = "<p>Campos não preenchidos</p>";
+                    resultato.style.backgroundColor = "#ffa3ad50";
+                    controle = false;
+                }
+    
+                if(assunto.value == ""){
+                    assunto.style.backgroundColor = "#ffa3ad50";
+                    resultato.innerHTML = "<p>Campos não preenchidos</p>";
+                    resultato.style.backgroundColor = "#ffa3ad50";
+                    controle = false;
+                }
+                if(!validateEmail(email.value)){
+                    email.style.backgroundColor = "#ffa3ad50";
+                    resultato.innerHTML = "<p>Por favor, insira um email válido</p>";
+                    resultato.style.backgroundColor = "#ffa3ad50";
+                    controle = false;
+                }
+    
+                if(privacy.checked == false){
+                    privacy.style.backgroundColor = "#ffa3ad50";
+                    resultato.innerHTML = "<p>Campos não preenchidos</p>";
+                    resultato.style.backgroundColor = "#ffa3ad50";
+                    textoPrivacy.style.backgroundColor = "#ffa3ad50";
+                    controle = false;
+                }
+    
+                return controle;
+            }
+
+            function validateEmail(email) { //verificar se é um email
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            function clearForm(nome, email, assunto, texto, textoPrivacy) {
+
+                nome.style.backgroundColor = "#fff";
+                email.style.backgroundColor = "#ffffff";
+                assunto.style.backgroundColor = "#ffffff"
+                privacy.style.backgroundColor = "#ffffff";
+                textoPrivacy.style.backgroundColor = "inherit";
+
+                nome.value = "";
+                email.value = "";
+                assunto.value = "";
+                texto.value = "";
+
+                //jQuery method
+                $("#privacy").prop("checked", false);
+
+            }
+    
+        </script>
+
+
+
+    </body>
+</html>
